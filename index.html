@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirección según dispositivo</title>
+    <script>
+        // Detectar si el usuario está en un dispositivo móvil
+        function redirigirPorDispositivo() {
+            const esMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (esMovil) {
+                // Redirigir a la versión móvil
+                window.location.href = "indexmobile.html";
+            } else {
+                // Redirigir a la versión de escritorio
+                window.location.href = "indexdesktop.html";
+            }
+        }
+        // Llamar a la función al cargar la página
+        window.onload = redirigirPorDispositivo;
+    </script>
+</head>
+<body>
+    <p>Redirigiendo...</p>
+</body>
+</html>

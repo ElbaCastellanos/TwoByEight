@@ -1,0 +1,509 @@
+/* VERSIÓNDESKTOP */
+@media (min-width: 768px){
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+        html, body {
+            font-family: 'Inter', sans-serif;
+            background-color: rgb(245,245,245);
+            color: #000;
+            height: 100%vh;
+            width: 100%;
+            display: grid; /* Cambia a grid layout */
+            grid-template-columns: 300px 1fr; /* Sidebar fijo y contenido flexible */
+            grid-template-rows: auto 1fr 40px; /* Una fila para toda la página */
+            overflow: hidden;  /* Evitar scroll innecesario */
+        }
+
+    /********* PARTE LATERAL IZQUIERDA *********/
+        .zonamenu{
+        position:absolute; 
+        left:0px;
+        top:0px;
+        width:20%;
+        height:100%;
+        background-color: rgb(245,245,245);
+        }
+
+        .logo {
+        font-size: 21px;
+        font-weight: bold;
+        color: #000;
+        text-decoration: none;
+        padding-top: 20px;
+        padding-left: 20px; /* Separación del borde izquierdo */
+        margin-bottom: 0; /* Elimina separación extra */
+        }
+
+        /* Barra lateral (sidebar) */
+        .sidebar {
+        display: block; /* Oculta la barra lateral inicialmente */
+        position: relative;
+        top: 30px; /* Aparece debajo del menú móvil */
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho */
+        background-color: rgb(245,245,245);
+        z-index: 10;
+        padding: 10px 0;
+        }
+
+        .sidebar-nav {
+        flex-grow: 1; /* Expande para alinear con el grid */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 50px;
+        }
+
+        .sidebar-nav ul {
+        list-style: none;
+        padding: 5;
+        }
+
+        .sidebar-nav li {
+        margin-bottom: 10px;
+        }
+
+        .home-item {
+        margin-bottom: 30px; /* Margen inferior de "Home" */
+        }
+
+        .graphic-design-item {
+        margin-top: 30px; /* Margen superior de "Graphic Design" */
+        }
+        
+        .sidebar-nav a {
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+        text-decoration: none;
+        padding-left: 20px; /* Separación del borde izquierdo */
+        display: block;
+        }
+
+        .sidebar-nav a:hover {
+        color: #F8A538;
+        }
+
+        .subproyectos {
+        list-style: none;
+        margin-left: 40px; /* Mayor sangría para submenús */
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: none; /* Submenús ocultos por defecto */
+        }
+
+        .subproyectos li a {
+        font-size: 14px; /* Tamaño más pequeño para submenús */
+        font-weight: 400; /* Submenús sin negrita */
+        }
+
+        .sidebar-footer{
+            display: block; /* Oculta la barra lateral inicialmente */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%; /* Ocupa todo el ancho */
+            background-color: rgb(245,245,245);
+            z-index: 10;
+            padding: 10px 0;
+            }
+
+        /* Contact Section */
+        .sidebar-footer-nav {
+            flex-grow: 1; /* Expande para alinear con el grid */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            }
+
+        .sidebar-footer-nav ul {
+            list-style: none;
+            padding: 5;  
+        }
+
+        .sidebar-footer-nav li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-footer-nav a {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            padding-left: 20px; /* Separación del borde izquierdo */
+            display: block;
+        }
+
+        .sidebar-footer-nav a:hover {
+        color: #F8A538;
+        }
+
+    /********* PARTE CONTENIDO *********/
+        .zonacontenido{
+            position:absolute;
+            overflow-y: auto;
+            overflow-x: hidden;
+            left:20%;
+            top:0px;
+            width:80%;
+            height:98%;
+            background-color: rgb(245,245,245);
+        }
+
+
+        /* Grid de Proyectos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+            gap: 20px;
+            margin-right: 20px;
+            height: calc(100vh - 40px); /* Ajusta al alto disponible */
+            padding: 20px;
+            align-self: center; /* Asegura alineación vertical */
+        }
+
+        .project {
+            background-color: rgb(245,245,245);
+            width: 100%; /* Ajusta al contenedor */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .project:hover img {
+            opacity: 0.3; /* Cambia opacidad al pasar el cursor */
+        }
+
+        .project h2 {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.5em;
+            color: rgb(0, 0, 0);
+        }
+
+        .contenedorcajitas {overflow: scroll}
+        .cajita {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: inherit;
+            position: absolute;
+            overflow: hidden;
+        }
+        
+        .cajita img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .cajita:hover img {
+            opacity: 0.3;
+        }
+        
+        .cajita h2 {
+            font-weight: 300;
+            font-size: 0.8em;
+            margin: 0;
+            margin-top: 4px;
+            text-align: left;
+            color: rgb(70,70,70);
+        }
+        
+        .cajita h2 a {
+            text-decoration: none !important;  /* Fuerza eliminación de subrayado */
+            color: rgb(70,70,70);
+        }
+
+        .cajita:hover H2 {
+            opacity: 1;
+            color: rgb(70,70,70);
+
+        }
+        .contact-text {
+            font-size: 1em;
+            margin: 10px 0;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .contact-wrapper {
+            height: 100%;
+            display: flex;
+            margin-top: 165px;
+            margin-left: 90px;
+        
+        }
+        
+        .contact-box {
+            text-align: left;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+    /********* PARTE FOOTER *********/
+
+        .zonafooter{
+            position:absolute; 
+            left:20%;
+            bottom:0px;
+            width:80%;
+            height:2%;
+            background-color:  rgb(245,245,245);
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom:0px;
+            color: rgb(2, 2, 2);
+            font-size: 12px; /* Tamaño pequeño */
+            height: 20px;
+            line-height: 30px;
+            vertical-align: middle;
+            left: 0px;
+            margin-bottom: 5px;
+        }
+
+/* PAGINAS */
+
+/* Estilo para el título general */
+.general-title {
+    text-align: left;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 20px 0; /* Espaciado superior e inferior */
+    color: #333; /* Color del texto */
+    margin-left: auto; /* Ajusta este margen según el margen de las imágenes */
+    text-align: left;
+}
+
+
+/* Clase para contener imágenes en una pila vertical */
+.image-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre imágenes */
+    padding: 20px;
+}
+
+/* Contenedor individual de cada imagen */
+.image-container {
+    width: 100%;
+    max-width: 800px; /* Tamaño máximo opcional */
+    margin: 0 auto; /* Centra las imágenes horizontalmente */
+}
+
+/* Imágenes que se ajustan al contenedor */
+.responsive-image {
+    width: 100%;
+    height: auto; /* Mantiene la proporción */
+    object-fit: cover; /* Opcional: asegura que se cubra el área visible */
+    display:block;
+}
+
+
+
+
+}
+
+/* VERSIÓN MÓVIL */
+@media (max-width: 768px) {
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color:  rgb(245,245,245);
+        color: #000;
+        display: flex; 
+        flex-direction: column; /* Apila los elementos verticalmente */
+        overflow-x: auto; 
+        overflow-y: auto;
+    }
+
+    .logo-secondary {
+        font-size: 21px;
+        font-weight: bold;
+        color: #000;
+        text-decoration: none;
+        margin-bottom: 0; /* Elimina separación extra */
+    }
+
+    .sidebar {
+        display: none; /* Oculta la barra lateral inicialmente */
+        position: absolute;
+        top: 50px; /* Aparece debajo del menú móvil */
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho */
+        background-color: white;
+        z-index: 10;
+        padding: 10px 0;
+    }
+
+    .sidebar.active {
+        display: block; /* Mostrar al activar */
+    }
+
+    .menu-mobile.active + .sidebar {
+        display: block; /* Muestra la barra lateral cuando el menú está activo */
+    }
+
+    .menu-mobile {
+        display: flex;
+        justify-content: space-between; /* Logo a la izquierda y menú hamburguesa a la derecha */
+        align-items: center;
+        padding: 10px 15px;
+        background-color:  rgb(245,245,245);
+    }
+
+    .hamburger-menu {
+        font-size: 24px; /* Icono de tamaño adecuado */
+        cursor: pointer;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Una columna */
+        gap: 5px;
+        padding: 10px;
+    }
+    
+
+    .project {
+        position: relative;
+        width: 100%;
+        height: auto; 
+        overflow: hidden;
+    }
+    
+    .project img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        object-fit: contain; /* opcional: evita que recorte */
+    }
+    .project a{
+
+    text-decoration: none;
+    }
+    .project h2 {
+        font-family: 'Afacad Flux', sans-serif;
+        font-weight: 100;
+        font-size: 1.2em;
+        color: #000;
+        margin-top: 1px;
+        text-align: center;
+    }
+    .sidebar-nav {
+        flex-grow: 1; /* Expande para alinear con el grid */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 10px;
+    }
+
+    .sidebar-nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar-nav li {
+        margin-bottom: 10px;
+    }
+
+    .home-item {
+        margin-bottom: 30px; /* Margen inferior de "Home" */
+    }
+
+    .sidebar-nav a {
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+        text-decoration: none;
+        padding-left: 20px; /* Separación del borde izquierdo */
+        display: block;
+    }
+
+    .sidebar-nav a:hover {
+        color: #F8A538;
+    }
+
+    .subproyectos {
+        list-style: none;
+        margin-left: 40px; /* Mayor sangría para submenús */
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: none; /* Submenús ocultos por defecto */
+    }
+
+    .subproyectos li a {
+        font-size: 14px; /* Tamaño más pequeño para submenús */
+        font-weight: 400; /* Submenús sin negrita */
+    }
+
+    /* Contact Section */
+    .sidebar-footer-nav {
+        list-style: none !important; /* Fuerza la eliminación de los puntos */
+        padding: 0 20px;
+        margin-bottom: 20px; /* Alineación precisa con el grid */
+    }
+
+    .sidebar-footer-nav li {
+        list-style: none !important; /* Elimina cualquier punto del navegador */
+        margin: 0; /* Elimina márgenes sobrantes */
+        padding: 0; /* Elimina padding extra */
+    }
+
+    .sidebar-footer-nav a {
+        font-size: 12px;
+        font-weight: 700;
+        color: #000;
+        text-decoration: none;
+        display: block;
+    }
+
+    .sidebar-footer-nav a:hover {
+        color: #F8A538;
+    }
+
+    .image-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Espaciado entre imágenes */
+        padding: 20px;
+    }
+    
+    /* Contenedor individual de cada imagen */
+    .image-container {
+        width: 100%;
+        max-width: 800px; /* Tamaño máximo opcional */
+        margin: 0 auto; /* Centra las imágenes horizontalmente */
+    }
+    
+    /* Imágenes que se ajustan al contenedor */
+    .responsive-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0; /* Sin esquinas redondeadas */
+    }
+}
