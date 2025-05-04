@@ -381,10 +381,11 @@
     }
 
     .projects-grid {
-        display: grid;
-        grid-template-columns: 1fr; /* Una columna */
-        gap: 5px;
-        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        gap: 0;
     }
     
 
@@ -488,22 +489,36 @@
     .image-stack {
         display: flex;
         flex-direction: column;
-        gap: 10px; /* Espaciado entre imágenes */
-        padding: 20px;
+        padding: 0;
+        margin: 0;
+        gap: 0; /* Elimina el espacio entre imágenes */
     }
     
-    /* Contenedor individual de cada imagen */
     .image-container {
-        width: 100%;
-        max-width: 800px; /* Tamaño máximo opcional */
-        margin: 0 auto; /* Centra las imágenes horizontalmente */
+        margin: 0;
+        padding: 0;
+        line-height: 0; /* Elimina espacio vertical entre imágenes inline */
     }
     
-    /* Imágenes que se ajustan al contenedor */
     .responsive-image {
         width: 100%;
         height: auto;
-        object-fit: cover;
-        border-radius: 0; /* Sin esquinas redondeadas */
+        display: block; /* Evita espacios fantasmas de imágenes inline */
+        margin: 0;
+        padding: 0;
+    }
+
+    .projects-grid > .image-container {
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+    }
+    
+    .projects-grid > .image-container .responsive-image {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
     }
 }
