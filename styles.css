@@ -311,7 +311,7 @@
 /* Contenedor individual de cada imagen */
 .image-container {
     width: 100%;
-    max-width: 800px; /* Tamaño máximo opcional */
+    max-width: 1200px; /* Tamaño máximo opcional */
     margin: 0 auto; /* Centra las imágenes horizontalmente */
 }
 
